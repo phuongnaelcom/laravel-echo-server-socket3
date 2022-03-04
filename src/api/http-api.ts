@@ -1,5 +1,6 @@
 import { Log } from './../log';
 let url = require('url');
+let cors = require('cors');
 import * as _ from 'lodash';
 
 export class HttpApi {
@@ -18,7 +19,7 @@ export class HttpApi {
      */
     init(): void {
         this.corsMiddleware();
-
+        this.express.use(cors());
         this.express.get(
             '/',
             (req, res) => this.getRoot(req, res),
