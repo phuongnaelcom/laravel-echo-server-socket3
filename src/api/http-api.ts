@@ -49,14 +49,12 @@ export class HttpApi {
      * Add CORS middleware if applicable.
      */
     corsMiddleware(): void {
-        if (this.options.allowCors) {
-            this.express.use((req, res, next) => {
-                res.header('Access-Control-Allow-Origin', this.options.allowOrigin);
-                res.header('Access-Control-Allow-Methods', this.options.allowMethods);
-                res.header('Access-Control-Allow-Headers', this.options.allowHeaders);
-                next();
-            });
-        }
+        this.express.use(function(req, res, next) {
+            res.header('Access-Control-Allow-Origin', '*');
+            res.header('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+            res.header('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token, X-Requested-With, Accept, Authorization, X-CSRF-TOKEN, X-Socket-Id');
+            next();
+        });
     }
 
     /**
