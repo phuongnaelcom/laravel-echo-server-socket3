@@ -1,6 +1,6 @@
-# Laravel Echo Server
+# Laravel Echo Server Socket 3
 
-NodeJs server for Laravel Echo broadcasting with Socket.io.
+NodeJs server for Laravel Echo broadcasting with Socket.io version 3.1.2
 
 ## System Requirements
 
@@ -18,7 +18,7 @@ official docs: <https://laravel.com/docs/master/broadcasting>
 Install npm package globally with the following command:
 
 ``` shell
-$   npm install -g laravel-echo-server
+$   npm install -g laravel-echo-server-socket3
 ```
 
 ### Initialize with CLI Tool
@@ -26,7 +26,7 @@ $   npm install -g laravel-echo-server
 Run the init command in your project directory:
 
 ``` shell
-$   laravel-echo-server init
+$   laravel-echo-server-socket3 init
 ```
 
 The cli tool will help you setup a **laravel-echo-server.json** file in the root directory of your project. This file will be loaded by the server during start up. You may edit this file later on to manage the configuration of your server.
@@ -60,7 +60,7 @@ You can remove clients with `laravel-echo-server client:remove APP_ID`
 in your project root directory, run
 
 ``` shell
-$ laravel-echo-server start
+$ laravel-echo-server-socket3 start
 ```
 
 #### Stop The Server
@@ -68,7 +68,7 @@ $ laravel-echo-server start
 in your project root directory, run
 
 ``` shell
-$ laravel-echo-server stop
+$ laravel-echo-server-socket3 stop
 ```
 
 ### Configurable Options

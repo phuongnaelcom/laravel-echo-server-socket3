@@ -33,7 +33,7 @@
     "yargs": "^15.3.1"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.149",
+    "@types/lodash": "^4.14.179",
     "@types/node": "^13.9.1",
     "typescript": "^3.8.3"
   },
