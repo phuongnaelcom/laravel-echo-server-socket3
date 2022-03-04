@@ -1,6 +1,6 @@
 {
   "name": "laravel-echo-server-socket3",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Laravel Echo Node JS Server for Socket.io 3x",
   "repository": {
     "type": "git",
