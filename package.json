@@ -41,6 +41,6 @@
     "sqlite3": "^3.1.13"
   },
   "bin": {
-    "laravel-echo-server": "bin/server.js"
+    "laravel-echo-server-socket3": "bin/server.js"
   }
 }
