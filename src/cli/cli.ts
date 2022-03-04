@@ -80,7 +80,7 @@ export class Cli {
                         console.log(
                             "Configuration file saved. Run " +
                                 colors.magenta.bold(
-                                    "laravel-echo-server start" +
+                                    "laravel-echo-server-socket3  start" +
                                         (file != "laravel-echo-server-socket3.json"
                                             ? ' --config="' + file + '"'
                                             : "")

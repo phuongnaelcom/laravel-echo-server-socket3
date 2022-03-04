@@ -145,7 +145,7 @@ ProxyPassReverse /socket.io http://localhost:6001/socket.io
 ```
 
 ### Setting the working directory
-The working directory in which `laravel-echo-server` will look for the configuration file `laravel-echo-server-socket3.json` can be passed to the `start` command through the `--dir` parameter like so: `laravel-echo-server start --dir=/var/www/html/example.com/configuration`
+The working directory in which `laravel-echo-server` will look for the configuration file `laravel-echo-server-socket3.json` can be passed to the `start` command through the `--dir` parameter like so: `laravel-echo-server-socket3  start --dir=/var/www/html/example.com/configuration`
 
 ## Subscribers
 The Laravel Echo Server subscribes to incoming events with two methods: Redis & Http.
