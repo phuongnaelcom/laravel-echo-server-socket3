@@ -29,7 +29,7 @@ Run the init command in your project directory:
 $   laravel-echo-server-socket3 init
 ```
 
-The cli tool will help you setup a **laravel-echo-server.json** file in the root directory of your project. This file will be loaded by the server during start up. You may edit this file later on to manage the configuration of your server.
+The cli tool will help you setup a **laravel-echo-server-socket3.json** file in the root directory of your project. This file will be loaded by the server during start up. You may edit this file later on to manage the configuration of your server.
 
 #### API Clients
 
@@ -39,7 +39,7 @@ The Laravel Echo Server exposes a light http API to perform broadcasting functio
 $ laravel-echo-server client:add APP_ID
 ```
 
-If you run `client:add` without an app id argument, one will be generated for you. After running this command, the client id and key will be displayed and stored in the **laravel-echo-server.json** file.
+If you run `client:add` without an app id argument, one will be generated for you. After running this command, the client id and key will be displayed and stored in the **laravel-echo-server-socket3.json** file.
 
 In this example, requests will be allowed as long as the app id and key are both provided with http requests.
 
@@ -73,7 +73,7 @@ $ laravel-echo-server-socket3 stop
 
 ### Configurable Options
 
-Edit the default configuration of the server by adding options to your **laravel-echo-server.json** file.
+Edit the default configuration of the server by adding options to your **laravel-echo-server-socket3.json** file.
 
 
 | Title              | Default              | Description                 |
@@ -95,7 +95,7 @@ Edit the default configuration of the server by adding options to your **laravel
 | `subscribers`      | `{"http": true, "redis": true}` | Allows to disable subscribers individually. Available subscribers: `http` and `redis` |
 
 ### DotEnv
-If a .env file is found in the same directory as the laravel-echo-server.json
+If a .env file is found in the same directory as the laravel-echo-server-socket3.json
 file, the following options can be overridden:
 
 - `authHost`: `LARAVEL_ECHO_SERVER_AUTH_HOST` *Note*: This option will fall back to the `LARAVEL_ECHO_SERVER_HOST` option as the default if that is set in the .env file.
@@ -145,7 +145,7 @@ ProxyPassReverse /socket.io http://localhost:6001/socket.io
 ```
 
 ### Setting the working directory
-The working directory in which `laravel-echo-server` will look for the configuration file `laravel-echo-server.json` can be passed to the `start` command through the `--dir` parameter like so: `laravel-echo-server start --dir=/var/www/html/example.com/configuration`
+The working directory in which `laravel-echo-server` will look for the configuration file `laravel-echo-server-socket3.json` can be passed to the `start` command through the `--dir` parameter like so: `laravel-echo-server start --dir=/var/www/html/example.com/configuration`
 
 ## Subscribers
 The Laravel Echo Server subscribes to incoming events with two methods: Redis & Http.
@@ -234,7 +234,7 @@ GET /apps/:APP_ID/channels/:CHANNEL_NAME/users
 ```
 
 ## Cross Domain Access To API
-Cross domain access can be specified in the laravel-echo-server.json file by changing `allowCors` in `apiOriginAllow` to `true`. You can then set the CORS Access-Control-Allow-Origin, Access-Control-Allow-Methods as a comma separated string (GET and POST are enabled by default) and the Access-Control-Allow-Headers that the API can receive.
+Cross domain access can be specified in the laravel-echo-server-socket3.json file by changing `allowCors` in `apiOriginAllow` to `true`. You can then set the CORS Access-Control-Allow-Origin, Access-Control-Allow-Methods as a comma separated string (GET and POST are enabled by default) and the Access-Control-Allow-Headers that the API can receive.
 
 Example below:
 
@@ -255,7 +255,7 @@ This allows you to send requests to the API via AJAX from an app that may be run
 
 To persist presence channel data, there is support for use of Redis or SQLite as a key/value store. The key being the channel name, and the value being the list of presence channel members.
 
-Each database driver may be configured in the **laravel-echo-server.json** file under the `databaseConfig` property. The options get passed through to the database provider, so developers are free to set these up as they wish.
+Each database driver may be configured in the **laravel-echo-server-socket3.json** file under the `databaseConfig` property. The options get passed through to the database provider, so developers are free to set these up as they wish.
 
 ### Redis
 For example, if you wanted to pass a custom configuration to Redis:

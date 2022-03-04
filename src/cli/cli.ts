@@ -48,7 +48,7 @@ export class Cli {
         yargs.option({
             config: {
                 type: "string",
-                default: "laravel-echo-server.json",
+                default: "laravel-echo-server-socket3.json",
                 describe: "The name of the config file to create."
             }
         });
@@ -81,7 +81,7 @@ export class Cli {
                             "Configuration file saved. Run " +
                                 colors.magenta.bold(
                                     "laravel-echo-server start" +
-                                        (file != "laravel-echo-server.json"
+                                        (file != "laravel-echo-server-socket3.json"
                                             ? ' --config="' + file + '"'
                                             : "")
                                 ) +
@@ -544,7 +544,7 @@ export class Cli {
     getConfigFile(file: string = null, dir: string = null): string {
         const filePath = path.join(
             dir || "",
-            file || "laravel-echo-server.json"
+            file || "laravel-echo-server-socket3.json"
         );
 
         return path.isAbsolute(filePath)
