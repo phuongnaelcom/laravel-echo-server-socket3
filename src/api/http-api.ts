@@ -51,9 +51,10 @@ export class HttpApi {
      */
     corsMiddleware(): void {
         this.express.use((req, res, next) => {
-            res.header('Access-Control-Allow-Origin', "*");
-            res.header('Access-Control-Allow-Methods', "GET, POST");
-            res.header('Access-Control-Allow-Headers', "Origin, Content-Type, X-Auth-Token, X-Requested-With, Accept, Authorization, X-CSRF-TOKEN, X-Socket-Id");
+            res.header("Access-Control-Allow-Origin", "*");
+            res.header("Access-Control-Allow-Credentials", true);
+            res.header("Access-Control-Allow-Methods", "GET, POST");
+            res.header("Access-Control-Allow-Headers", "Origin, Content-Type, X-Auth-Token, X-Requested-With, Accept, Authorization, X-CSRF-TOKEN, X-Socket-Id");
             next();
         });
     }
