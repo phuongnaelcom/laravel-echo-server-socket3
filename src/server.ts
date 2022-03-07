@@ -100,7 +100,7 @@ export class Server {
      */
     httpServer(secure: boolean) {
         this.express = express();
-        this.express.use(cors());
+        this.express.use(cors({ origin: 'http://103.21.151.163:8805' }));
         if (secure) {
             var httpServer = https.createServer(this.options, this.express);
         } else {
