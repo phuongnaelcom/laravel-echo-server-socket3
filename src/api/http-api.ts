@@ -50,19 +50,14 @@ export class HttpApi {
      * Add CORS middleware if applicable.
      */
     corsMiddleware(): void {
-        const corsOptions = {
-            credentials: true,
-            origin: [
-                "http://103.21.151.163:8805",
-                "http://localhost:3000",
-                "http://localhost:6013",
-                "https://echo-care-dev.1sk.vn",
-                "https://care-dev.1sk.vn"
-            ],
-            optionsSuccessStatus: 200 // For legacy browser support
-        };
-
-        this.express.use(cors(corsOptions));
+        if (this.options.allowCors) {
+            this.express.use((req, res, next) => {
+                res.header('Access-Control-Allow-Origin', this.options.allowOrigin);
+                res.header('Access-Control-Allow-Methods', this.options.allowMethods);
+                res.header('Access-Control-Allow-Headers', this.options.allowHeaders);
+                next();
+            });
+        }
     }
 
     /**
