@@ -51,6 +51,7 @@ export class HttpApi {
      */
     corsMiddleware(): void {
         const corsOptions = {
+            credentials: true,
             origin: [
                 "http://103.21.151.163:8805",
                 "http://localhost:3000",
