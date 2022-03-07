@@ -1,6 +1,5 @@
 import { Log } from './../log';
 let url = require('url');
-const cors = require('cors');
 import * as _ from 'lodash';
 
 export class HttpApi {
@@ -18,8 +17,6 @@ export class HttpApi {
      * Initialize the API.
      */
     init(): void {
-        this.corsMiddleware();
-
         this.express.get(
             '/',
             (req, res) => this.getRoot(req, res),
@@ -44,20 +41,6 @@ export class HttpApi {
             '/apps/:appId/channels/:channelName/users',
             (req, res) => this.getChannelUsers(req, res)
         );
-    }
-
-    /**
-     * Add CORS middleware if applicable.
-     */
-    corsMiddleware(): void {
-        if (this.options.allowCors) {
-            this.express.use((req, res, next) => {
-                res.header('Access-Control-Allow-Origin', this.options.allowOrigin);
-                res.header('Access-Control-Allow-Methods', this.options.allowMethods);
-                res.header('Access-Control-Allow-Headers', this.options.allowHeaders);
-                next();
-            });
-        }
     }
 
     /**
