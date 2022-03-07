@@ -1,6 +1,6 @@
 import { Log } from './../log';
 let url = require('url');
-let cors = require('cors');
+const cors = require('cors');
 import * as _ from 'lodash';
 
 export class HttpApi {
@@ -53,12 +53,13 @@ export class HttpApi {
         const corsOptions = {
             origin: [
                 "http://103.21.151.163:8805",
-                "http://localhost:3000"
+                "http://localhost:3000",
+                "https://echo-care-dev.1sk.vn"
             ],
             optionsSuccessStatus: 200 // For legacy browser support
         };
 
-        this.express.use(cors(corsOptions));
+        this.express.use(cors());
     }
 
     /**
