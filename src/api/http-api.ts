@@ -56,7 +56,8 @@ export class HttpApi {
                 "http://103.21.151.163:8805",
                 "http://localhost:3000",
                 "http://localhost:6013",
-                "https://echo-care-dev.1sk.vn"
+                "https://echo-care-dev.1sk.vn",
+                "https://care-dev.1sk.vn"
             ],
             optionsSuccessStatus: 200 // For legacy browser support
         };
