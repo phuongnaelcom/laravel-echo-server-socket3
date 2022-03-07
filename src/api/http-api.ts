@@ -19,7 +19,7 @@ export class HttpApi {
      */
     init(): void {
         this.corsMiddleware();
-        this.express.use(cors());
+
         this.express.get(
             '/',
             (req, res) => this.getRoot(req, res),
@@ -50,13 +50,7 @@ export class HttpApi {
      * Add CORS middleware if applicable.
      */
     corsMiddleware(): void {
-        this.express.use(function(req, res, next) {
-            res.header('Access-Control-Allow-Origin', '*');
-            res.header('Access-Control-Allow-Credentials', true);
-            res.header('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
-            res.header('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token, X-Requested-With, Accept, Authorization, X-CSRF-TOKEN, X-Socket-Id');
-            next();
-        });
+        this.express.use(cors({ origin: '*'}));
     }
 
     /**
