@@ -50,7 +50,15 @@ export class HttpApi {
      * Add CORS middleware if applicable.
      */
     corsMiddleware(): void {
-        this.express.use(cors());
+        const corsOptions = {
+            origin: [
+                "http://103.21.151.163:8805",
+                "http://localhost:3000"
+            ],
+            optionsSuccessStatus: 200 // For legacy browser support
+        };
+
+        this.express.use(cors(corsOptions));
     }
 
     /**
