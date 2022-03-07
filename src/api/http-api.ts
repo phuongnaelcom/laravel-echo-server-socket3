@@ -59,7 +59,7 @@ export class HttpApi {
             optionsSuccessStatus: 200 // For legacy browser support
         };
 
-        this.express.use(cors());
+        this.express.use(cors(corsOptions));
     }
 
     /**
