@@ -115,7 +115,7 @@ export class Server {
         httpServer.listen(this.getPort(), this.options.host);
 
         this.authorizeRequests();
-
+        this.options.socketio.allowEIO3 = true;
         return this.io = io(httpServer, this.options.socketio);
     }
 
