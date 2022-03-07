@@ -120,7 +120,7 @@ export class EchoServer {
      * Text shown at startup.
      */
     startup(): void {
-        Log.title(`\nL A R A V E L  E C H O  S E R V E R\n`);
+        Log.title(`\nL A R A V E L  E C H O  S E R V E R S O C K E T 3\n`);
         Log.info(`version ${packageFile.version}\n`);
 
         if (this.options.devMode) {
@@ -134,7 +134,7 @@ export class EchoServer {
      * Stop the echo server.
      */
     stop(): Promise<any> {
-        console.log('Stopping the LARAVEL ECHO SERVER')
+        console.log('Stopping the LARAVEL ECHO SERVER SOCKET 3')
         let promises = [];
         this.subscribers.forEach(subscriber => {
             promises.push(subscriber.unsubscribe());
